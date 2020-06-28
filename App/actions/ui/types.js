@@ -1,0 +1,2 @@
+export const THEME_TOGGLE = 'THEME_TOGGLE';
+export const LOGIN_SET_STATUS = 'LOGIN_SET_STATUS';
