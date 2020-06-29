@@ -12,8 +12,8 @@ export const Container = styled.TouchableOpacity`
 
 export const ImageWrapper = styled(Image)`
   align-items: flex-end;
-  min-height: 25px;
-  min-width: 25px;
+  height: 20px;
+  width: 20px;
 `;
 
 export const Separator = styled.View`

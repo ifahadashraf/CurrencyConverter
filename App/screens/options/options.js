@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListView } from '../../components/list-view';
+import { ListItem } from '../../components/list-item';
 import { Container} from './styled';
-import { OPTIONS } from '../../utils/values';
-import {persistData} from '../../utils';
+import { persistData } from '../../utils';
 
 export const Options = ({ navigation }) => (
   <Container>
-    <ListView
-      data={ OPTIONS }
-      onItemPress={ () => {
+    <ListItem
+      text={ 'Logout' }
+      onPress={ () => {
         persistData('isLoggedIn', '');
         navigation.navigate('Login');
+      } }
+    />
+    <ListItem
+      text={ 'Storybook' }
+      onPress={ () => {
+        navigation.navigate('Storybook');
       } }
     />
   </Container>

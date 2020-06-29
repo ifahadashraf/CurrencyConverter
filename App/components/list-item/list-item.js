@@ -7,7 +7,13 @@ export const ListItem = ({ text, img, onPress }) => (
   <>
     <Container onPress={ () => onPress(text) }>
       <Text>{ text }</Text>
-      { img && <ImageWrapper source={ img } /> }
+      {
+        img &&
+        <ImageWrapper
+          source={ img }
+          resizeMode='contain'
+        />
+      }
     </Container>
     <Separator />
   </>
