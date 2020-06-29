@@ -1,11 +1,16 @@
 import * as types from './types';
 
 export const toggleTheme = data => ({
-  type: types.THEME_TOGGLE,
+  type: types.UI_THEME_TOGGLE,
   data,
 });
 
 export const setLoginStatus = data => ({
-  type: types.LOGIN_SET_STATUS,
+  type: types.UI_LOGIN_SET_STATUS,
+  data,
+});
+
+export const setFavorites = data => ({
+  type: types.UI_SET_FAVORITES,
   data,
 });

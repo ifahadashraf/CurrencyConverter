@@ -10,6 +10,9 @@ export const Container = styled.TouchableOpacity`
   justify-content: space-between;
 `;
 
+export const ImageContainer = styled.TouchableOpacity`
+`;
+
 export const ImageWrapper = styled(Image)`
   align-items: flex-end;
   height: 20px;

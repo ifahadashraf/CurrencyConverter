@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import { Button } from '../../components/button';
 import { Heading } from '../../components/heading';
 import { Container, InputWrapper } from './styled';
-import {getPersistedData, persistData} from '../../utils';
 
-export const Login = ({ navigation, setLoginStatus }) => {
+export const Login = ({ navigation, isLoggedIn, setLoginStatus }) => {
   useEffect(() => {
-    getPersistedData('isLoggedIn')
-      .then(result => {
-        result === 'true' && navigation.navigate('Home');
-      });
+    isLoggedIn && navigation.navigate('Home');
   }, []);
   return (
     <Container>
@@ -25,7 +21,6 @@ export const Login = ({ navigation, setLoginStatus }) => {
         onPress={ () => {
           setTimeout(() => {
             setLoginStatus(true);
-            persistData('isLoggedIn', 'true');
             navigation.navigate('Home');
           }, 500);
         } }
