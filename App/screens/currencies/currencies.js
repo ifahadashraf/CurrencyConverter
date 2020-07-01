@@ -6,6 +6,8 @@ import { CURRENCY_TYPES } from '../../utils/values';
 import currencies from '../../data/currencies';
 
 export const Currencies = ({
+  addToFavorites,
+  favorites,
   navigation,
   route: { params = {} },
   setBaseCurrency,
@@ -15,6 +17,8 @@ export const Currencies = ({
     <Container>
       <ListView
         data={ currencies }
+        favorites={ favorites }
+        onIconPress={ addToFavorites }
         onItemPress={ currency => {
           params.title === CURRENCY_TYPES.BASE
             ? setBaseCurrency(currency)
@@ -29,6 +33,8 @@ export const Currencies = ({
 Currencies.propTypes = {
   navigation: PropTypes.object,
   route: PropTypes.object,
+  favorites: PropTypes.array,
+  addToFavorites: PropTypes.func,
   setBaseCurrency: PropTypes.func,
   setQuoteCurrency: PropTypes.func,
 };

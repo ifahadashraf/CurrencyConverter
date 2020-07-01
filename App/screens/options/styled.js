@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Image } from '../../components/image';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
   background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
 `;

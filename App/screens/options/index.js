@@ -1,1 +1,1 @@
-export { Options } from './options';
+export { OptionsContainer as Options } from './container';

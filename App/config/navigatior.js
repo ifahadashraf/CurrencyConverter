@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Currencies } from '../screens/currencies';
 import { Home } from '../screens/home';
 import { Login } from '../screens/login';
 import { Options } from '../screens/options';
+import Storybook from '../screens/storybook';
 
 const MainStack = createStackNavigator();
 
@@ -30,6 +30,10 @@ export const Navigator = () => (
       options={ ({route}) => ({
         title: route.params && route.params.title,
       }) }
+    />
+    <MainStack.Screen
+      name='Storybook'
+      component={ Storybook }
     />
   </MainStack.Navigator>
 );
