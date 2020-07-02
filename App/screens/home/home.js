@@ -25,6 +25,10 @@ export const Home = ({
   useEffect(() => {
     setQuoteCurrencyValue((baseCurrencyValue * conversionRate).toString());
   }, [baseCurrencyValue, conversionRate, setQuoteCurrencyValue]);
+  const handleBaseCurrencyOnChange = text => {
+    setBaseCurrencyValue(text);
+    setQuoteCurrencyValue((text * conversionRate).toString());
+  };
   return (
     <>
       { isLoading && <Loader /> }
@@ -44,10 +48,7 @@ export const Home = ({
         <InputWrapper
           btnText={ baseCurrency || 'From' }
           placeholder='Base currency'
-          onChangeText={ text => {
-            setBaseCurrencyValue(text);
-            setQuoteCurrencyValue((text * conversionRate).toString());
-          } }
+          onChangeText={ handleBaseCurrencyOnChange }
           onBtnPress={ () =>
             navigation.push('Currencies', {
               title: 'Base Currency',
