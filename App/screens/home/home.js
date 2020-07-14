@@ -30,10 +30,12 @@ export const Home = ({
       { isLoading && <Loader /> }
       <Header>
         <ImageButton
+          testID='toggleThemeBtn'
           img={ require('../../assets/images/theme.png') }
           onPress={ () => toggleTheme() }
         />
         <ImageButton
+          testID='optionsBtn'
           img={ require('../../assets/images/settings.png') }
           onPress={ () => navigation.push('Options') }
         />
@@ -42,6 +44,8 @@ export const Home = ({
         <Heading>Currency Converter</Heading>
         <ImageWrapper source={ logo } />
         <InputWrapper
+          testID='fromText'
+          btnTestID='baseCurrencyBtn'
           btnText={ baseCurrency || 'From' }
           placeholder='Base currency'
           onChangeText={ text => {
@@ -56,6 +60,8 @@ export const Home = ({
           }
         />
         <InputWrapper
+          testID='toText'
+          btnTestID='quoteCurrencyBtn'
           btnText={ quoteCurrency || 'To' }
           editable={ false }
           placeholder='Target currency'
