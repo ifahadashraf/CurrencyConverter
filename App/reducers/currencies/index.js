@@ -1,6 +1,6 @@
 import * as uiActionTypes from '../../actions/currencies/types';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   baseCurrency: null,
   baseCurrencyValue: null,
   conversionRates: null,
