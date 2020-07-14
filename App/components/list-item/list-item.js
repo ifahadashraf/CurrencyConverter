@@ -9,7 +9,10 @@ export const ListItem = ({ text, img, onPress, onIconPress }) => (
       <Text>{ text }</Text>
       {
         img &&
-        <ImageContainer onPress={ () => onIconPress(text) }>
+        <ImageContainer
+          testID={ `${text}_fav_btn` }
+          onPress={ () => onIconPress(text) }
+        >
           <ImageWrapper
             source={ img }
             resizeMode='contain'
