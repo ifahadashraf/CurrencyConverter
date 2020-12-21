@@ -13,18 +13,19 @@ export const Currencies = ({
   setBaseCurrency,
   setQuoteCurrency,
 }) => {
+  const handleOnItemPress = currency => {
+    params.title === CURRENCY_TYPES.BASE
+      ? setBaseCurrency(currency)
+      : setQuoteCurrency(currency);
+    navigation.pop();
+  };
   return (
     <Container>
       <ListView
         data={ currencies }
         favorites={ favorites }
         onIconPress={ addToFavorites }
-        onItemPress={ currency => {
-          params.title === CURRENCY_TYPES.BASE
-            ? setBaseCurrency(currency)
-            : setQuoteCurrency(currency);
-          navigation.pop();
-        } }
+        onItemPress={ handleOnItemPress }
       />
     </Container>
   );
